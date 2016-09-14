@@ -13,22 +13,23 @@ for x in punctuation:
 
 for n in bad_n:
     contents = contents.replace(n, " ")
-
+#  go through the text and find the number of times each word is used.
+#  a collection of text (a book) into another form (a frequency dictionary).
 contents = contents.split()
 my_dict = {}
 
 for word in contents:
-    print(word)
+    # print(word)
     if word in my_dict.keys():
         my_dict[word] += 1
     else:
         my_dict[word] = 1
-print(sorted(my_dict.items(), key=lambda x: x[1]))
+words_sort = sorted(my_dict.items(), key=lambda x: x[1])
+words_sort = words_sort[:-21:-1]
+#  find the top 20 words used and output them to the console in reverse order, along with their frequency
 
-
-
-#  go through the text and find the number of times each word is used.
-#  a collection of text (a book) into another form (a frequency dictionary).
-#  find the top 20 words used and output them to the console in reverse order, along with their frequency,
+for word, count in words_sort:
+    print("{} {}".format(word, count))
+#  my notes
 #  print(help(list))
 #  sorted accepts the value of a key

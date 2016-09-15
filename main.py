@@ -17,7 +17,7 @@ for n in bad_n:
 #  a collection of text (a book) into another form (a frequency dictionary).
 contents = contents.split()
 my_dict = {}
-
+# print(contents)
 for word in contents:
     # print(word)
     if word in my_dict.keys():
